@@ -17,7 +17,7 @@ try {
     
     if($action == "insert" && $symbol != "" && $name != "" && $current_price != 0)
     {
-        $query = "INSERT INTO stocks (symbol, name, current_price,) VALUES (:symbol, :name, :current_price)";
+        $query = "INSERT INTO stocks (symbol, name, current_price) VALUES (:symbol, :name, :current_price)";
         
         $statement = $database->prepare($query);
         $statement->bindValue(":symbol", $symbol);
@@ -115,7 +115,7 @@ catch (Exception $e)
             <label>Name:</label>
             <input type="text" name="name"/><br> 
             <label>Current Price:</label>
-            <input type="text" name="curent_price"/><br>
+            <input type="text" name="current_price"/><br>
             <input type="hidden" name='action' value='insert'/>
             <label>&nbsp;</label>
             <input type="submit" value="Add Stock"/><br>
@@ -130,7 +130,7 @@ catch (Exception $e)
             <label>Name:</label>
             <input type="text" name="name"/><br> 
             <label>Current Price:</label>
-            <input type="text" name="curent_price"/><br>
+            <input type="text" name="current_price"/><br>
             <input type="hidden" name='action' value='update'/>
             <label>&nbsp;</label>
             <input type="submit" value="Update Stock"/><br>
